@@ -10,7 +10,7 @@ public:
     GBKChecker()
         :CharacterChacker()
     {
-        this->character_name = "GBK";
+        this->charset_name = "GBK";
     }
 
     bool detect(std::string str)

@@ -8,26 +8,42 @@
 #include "utf8checker.h"
 #include <vector>
 
-// change the order for ur case if necessary
-std::vector<CharacterChacker*> checker_collections = {
-    new AsciiChecker(),
-    new GB18030Checker(),
-    new UTF8Checker(),
-    new GBKChecker()};
-
-std::string detect(std::string str)
+class Chardet
 {
-    std::string character = "unknown";
-    for(CharacterChacker* f:checker_collections)
+public:
+    Chardet()
     {
-        if(f->detect(str))
+        // change the order for ur case if necessary
+        checker_collections = {
+            new AsciiChecker(),
+            new GB18030Checker(),
+            new UTF8Checker(),
+            new GBKChecker()};
+    }
+    std::string detect(std::string str)
+    {
+        std::string char_set = "unknown";
+        for(CharacterChacker* f:checker_collections)
         {
-            character = f->character_name;
-            break;
+            if(f->detect(str))
+            {
+                char_set = f->get_charset_name();
+                break;
+            }
+        }
+        return char_set;
+    }
+    ~Chardet()
+    {
+        for(CharacterChacker* f:checker_collections)
+        {
+            delete f;
         }
     }
-    return character;
-}
+
+private:
+    std::vector<CharacterChacker*> checker_collections;
+};
 
 #endif // CHARDET
 

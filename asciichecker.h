@@ -9,7 +9,7 @@ public:
     AsciiChecker()
         :CharacterChacker()
     {
-        this->character_name = "Ascii";
+        this->charset_name = "Ascii";
     }
 
     bool detect(std::string str)

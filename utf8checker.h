@@ -37,7 +37,7 @@ public:
     UTF8Checker()
         :CharacterChacker()
     {
-        this->character_name = "UTF-8";
+        this->charset_name = "UTF-8";
     }
 
     bool detect(std::string str)

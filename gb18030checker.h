@@ -27,7 +27,7 @@ public:
     GB18030Checker():
         CharacterChacker()
     {
-        this->character_name = "GB18030";
+        this->charset_name = "GB18030";
     }
 
     bool detect(std::string str)

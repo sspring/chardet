@@ -2,13 +2,15 @@
 #define CHECKER
 
 #include <string>
+#include <list>
 
 class CharacterChacker
 {
 public:
     virtual bool detect(std::string str)=0;
-public:
-    std::string character_name;
+    std::string get_charset_name(){return this->charset_name;}
+protected:
+    std::string charset_name;
 };
 
 #endif // CHECKER
