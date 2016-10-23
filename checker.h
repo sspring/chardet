@@ -4,7 +4,7 @@
 #include <string>
 #include <list>
 
-class CharacterChacker
+class CharsetChecker
 {
 public:
     virtual bool detect(std::string str)=0;

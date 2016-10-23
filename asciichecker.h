@@ -1,15 +1,15 @@
 #ifndef ASCIICHECKER
 #define ASCIICHECKER
 
-#include "chacker.h"
+#include "checker.h"
 
-class AsciiChecker:public CharacterChacker
+class AsciiChecker:public CharsetChecker
 {
 public:
     AsciiChecker()
-        :CharacterChacker()
+        :CharsetChecker()
     {
-        this->charset_name = "Ascii";
+        this->charset_name = "ascii";
     }
 
     bool detect(std::string str)

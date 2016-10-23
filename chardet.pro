@@ -22,5 +22,5 @@ HEADERS += \
     gb18030checker.h \
     gbkchecker.h \
     asciichecker.h \
-    chacker.h \
-    chardet.h
+    chardet.h \
+    checker.h

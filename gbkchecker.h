@@ -1,16 +1,16 @@
 #ifndef GBKCHECKER
 #define GBKCHECKER
 
-#include "chacker.h"
+#include "checker.h"
 #include <QDebug>
 
-class GBKChecker:public CharacterChacker
+class GBKChecker:public CharsetChecker
 {
 public:
     GBKChecker()
-        :CharacterChacker()
+        :CharsetChecker()
     {
-        this->charset_name = "GBK";
+        this->charset_name = "gbk";
     }
 
     bool detect(std::string str)

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <functional>
-#include "chacker.h"
+#include "checker.h"
 
 #define func_type std::function<bool(const uchar*)>
 
@@ -21,13 +21,13 @@ std::vector<func_type > four_byte_detect = {
     four_byte_func(0x81,0x82),
     four_byte_func(0x91,0x98)};
 
-class GB18030Checker:public CharacterChacker
+class GB18030Checker:public CharsetChecker
 {
 public:
     GB18030Checker():
-        CharacterChacker()
+        CharsetChecker()
     {
-        this->charset_name = "GB18030";
+        this->charset_name = "gb18030";
     }
 
     bool detect(std::string str)

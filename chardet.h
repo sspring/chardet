@@ -1,7 +1,7 @@
 #ifndef CHARDET
 #define CHARDET
 
-#include "chacker.h"
+#include "checker.h"
 #include "asciichecker.h"
 #include "gbkchecker.h"
 #include "gb18030checker.h"
@@ -23,7 +23,7 @@ public:
     std::string detect(std::string str)
     {
         std::string char_set = "unknown";
-        for(CharacterChacker* f:checker_collections)
+        for(CharsetChecker* f:checker_collections)
         {
             if(f->detect(str))
             {
@@ -35,14 +35,14 @@ public:
     }
     ~Chardet()
     {
-        for(CharacterChacker* f:checker_collections)
+        for(CharsetChecker* f:checker_collections)
         {
             delete f;
         }
     }
 
 private:
-    std::vector<CharacterChacker*> checker_collections;
+    std::vector<CharsetChecker*> checker_collections;
 };
 
 #endif // CHARDET

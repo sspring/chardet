@@ -5,7 +5,7 @@
 #include <string>
 #include <map>
 #include <functional>
-#include "chacker.h"
+#include "checker.h"
 
 bool bytes_extra_check(const uchar* str,int length)  // check every byte in str
 {
@@ -31,13 +31,13 @@ std::map<int,std::function<bool(const uchar*,int)> >utf8_detect_function={ \
                         {5,multibyte_utf8(0xFC,0xF8,5)},
                         {6,multibyte_utf8(0xFE,0xFC,6)}};
 
-class UTF8Checker:public CharacterChacker
+class UTF8Checker:public CharsetChecker
 {
 public:
     UTF8Checker()
-        :CharacterChacker()
+        :CharsetChecker()
     {
-        this->charset_name = "UTF-8";
+        this->charset_name = "utf-8";
     }
 
     bool detect(std::string str)
