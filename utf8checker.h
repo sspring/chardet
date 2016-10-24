@@ -40,7 +40,7 @@ public:
         this->charset_name = "utf-8";
     }
 
-    bool detect(std::string str)
+    bool detect(std::string str) const
     {
         int current_index = -1 ;
         int length = str.length();
@@ -63,6 +63,8 @@ public:
         return (current_index+1==length);
     }
 };
+
+UTF8Checker _utf8checker = UTF8Checker();
 
 #endif // UTF8CHECKER
 

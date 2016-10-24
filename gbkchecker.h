@@ -12,7 +12,7 @@ public:
         this->charset_name = "gbk";
     }
 
-    bool detect(std::string str)
+    bool detect(std::string str) const
     {
         int current_index = -1;
         int length = str.length();
@@ -35,7 +35,7 @@ public:
         return (current_index+1==length);
     }
 private:
-    bool check_two_byte(const uchar* str)
+    bool check_two_byte(const uchar* str)const
     {
         bool first_byte_valid = *str>=0x81 && *str<=0xFE;
         ++ str;  // let check second byte
@@ -45,5 +45,6 @@ private:
     }
 };
 
+GBKChecker _gbkchecker = GBKChecker();
 #endif // GBKCHECKER
 

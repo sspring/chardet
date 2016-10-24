@@ -9,43 +9,25 @@
 #include "big5checker.h"
 #include <vector>
 
-class Chardet
+std::vector<CharsetChecker*> checker_collections = {
+    &_asciichecker,
+    &_gb18030checker,
+    &_utf8checker,
+    &_gbkchecker,
+    &_big5checker};
+
+std::string detect(std::string str)
 {
-public:
-    Chardet()
+    std::string char_set = "unknown";
+    for(CharsetChecker* f:checker_collections)
     {
-        // change the order for ur case if necessary
-        checker_collections = {
-            new AsciiChecker(),
-            new GB18030Checker(),
-            new UTF8Checker(),
-            new GBKChecker(),
-            new Big5Checker()};
-    }
-    std::string detect(std::string str)
-    {
-        std::string char_set = "unknown";
-        for(CharsetChecker* f:checker_collections)
+        if(f->detect(str))
         {
-            if(f->detect(str))
-            {
-                char_set = f->get_charset_name();
-                break;
-            }
-        }
-        return char_set;
-    }
-    ~Chardet()
-    {
-        for(CharsetChecker* f:checker_collections)
-        {
-            delete f;
+            char_set = f->get_charset_name();
+            break;
         }
     }
-
-private:
-    std::vector<CharsetChecker*> checker_collections;
-};
-
+    return char_set;
+}
 #endif // CHARDET
 

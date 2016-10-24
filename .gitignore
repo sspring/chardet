@@ -27,3 +27,6 @@
 *.exe
 *.out
 *.app
+
+# Qt user profile
+*.pro.user*

@@ -30,7 +30,7 @@ public:
         this->charset_name = "gb18030";
     }
 
-    bool detect(std::string str)
+    bool detect(std::string str) const
     {
         int current_index = -1;
         int length = str.length();
@@ -70,6 +70,8 @@ public:
         return (current_index+1 == length);
     }
 };
+
+GB18030Checker _gb18030checker = GB18030Checker();
 
 #endif // GB18030CHECKER
 

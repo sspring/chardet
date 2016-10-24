@@ -22,7 +22,7 @@ public:
         this->charset_name = "big5";
     }
 
-    bool detect(std::string str)
+    bool detect(std::string str)const
     {
         int current_index = -1;
         int length = str.length();
@@ -46,7 +46,7 @@ public:
         return (current_index+1 == length);
     }
 private:
-    bool check_two_bytes(const uchar* buffer)
+    bool check_two_bytes(const uchar* buffer)const
     {
         for(auto f:Big5_two_byte_detect)
         {
@@ -58,5 +58,7 @@ private:
         return false;
     }
 };
+Big5Checker _big5checker = Big5Checker();
+
 #endif // BIG5CHECKER
 

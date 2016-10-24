@@ -12,7 +12,7 @@ public:
         this->charset_name = "ascii";
     }
 
-    bool detect(std::string str)
+    bool detect(std::string str)const
     {
         for(uchar ch:str)
         {
@@ -24,6 +24,9 @@ public:
         return true;
     }
 };
+
+// global variable --- like singleton
+AsciiChecker _asciichecker = AsciiChecker();
 
 #endif // ASCIICHECKER
 
