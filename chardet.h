@@ -6,6 +6,7 @@
 #include "gbkchecker.h"
 #include "gb18030checker.h"
 #include "utf8checker.h"
+#include "big5checker.h"
 #include <vector>
 
 class Chardet
@@ -18,7 +19,8 @@ public:
             new AsciiChecker(),
             new GB18030Checker(),
             new UTF8Checker(),
-            new GBKChecker()};
+            new GBKChecker(),
+            new Big5Checker()};
     }
     std::string detect(std::string str)
     {

@@ -23,4 +23,5 @@ HEADERS += \
     gbkchecker.h \
     asciichecker.h \
     chardet.h \
-    checker.h
+    checker.h \
+    big5checker.h

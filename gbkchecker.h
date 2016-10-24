@@ -2,7 +2,6 @@
 #define GBKCHECKER
 
 #include "checker.h"
-#include <QDebug>
 
 class GBKChecker:public CharsetChecker
 {
