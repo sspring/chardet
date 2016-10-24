@@ -1,9 +1,9 @@
 #ifndef GB18030CHECKER
 #define GB18030CHECKER
 
+#include "checker.h"
 #include <vector>
 #include <functional>
-#include "checker.h"
 
 #define func_type std::function<bool(const uchar*)>
 

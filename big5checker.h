@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <functional>
-#include <QDebug>
 
 #define Big5_two_byte_func(min,max) \
     [](const uchar* s){ushort value=(*s<<8)+s[1];return value>=min && value<= max;}
