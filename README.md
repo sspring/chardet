@@ -1,6 +1,6 @@
 # chardet
 c++版本的chardet,功能类似于pyhon的chardet模块
-支持 ascii(iso_ir 100),gb18030,gbk,big5,utf-8(iso_ir 192)等编码的自动检测
+支持 ascii(iso_ir 100),gb18030,gbk,big5,utf-8(iso_ir 192),shift-jp等编码的自动检测
 主要有detect和check两个核心方法。
 
 1.检测字符串编码

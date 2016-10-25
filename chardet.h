@@ -7,6 +7,7 @@
 #include "gb18030checker.h"
 #include "utf8checker.h"
 #include "big5checker.h"
+#include "shiftjischecker.h"
 #include <algorithm>
 
 std::map<std::string,std::string> charset_alians = {
@@ -16,13 +17,15 @@ std::map<std::string,std::string> charset_alians = {
         {"gbk","gbk"},
         {"big5","big5"},
         {"iso_ir 100","ascii"},  // DICOM charset
-        {"iso_ir 192","utf-8"}};  // DICOM charset
+        {"iso_ir 192","utf-8"},
+        {"iso 2022 ir 13","shift_jis"}};  // DICOM charset
 
 #define charset_pair_type std::pair<std::string,CharsetChecker*>
 std::list<charset_pair_type> checker_collections = {
     {_asciichecker.get_charset_name(),&_asciichecker},
     {_utf8checker.get_charset_name(),&_utf8checker},
     {_gb18030checker.get_charset_name(),&_gb18030checker},
+    {_shiftjischecker.get_charset_name(),&_shiftjischecker},
     {_gbkchecker.get_charset_name(),&_gbkchecker},
     {_big5checker.get_charset_name(),&_big5checker}};
 

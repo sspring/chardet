@@ -24,4 +24,5 @@ HEADERS += \
     asciichecker.h \
     chardet.h \
     checker.h \
-    big5checker.h
+    big5checker.h \
+    shiftjischecker.h
