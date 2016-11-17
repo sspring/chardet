@@ -25,6 +25,7 @@ bool bytes_extra_check(const uchar* str,int length)  // check every byte in str
                                          bytes_extra_check(s+1,num-1));}
 
 std::map<int,std::function<bool(const uchar*,int)> >utf8_detect_function={ \
+                        {1,multibyte_utf8(0x80,0x00,1)}, // ascii
                         {2,multibyte_utf8(0xE0,0xC0,2)},
                         {3,multibyte_utf8(0xF0,0xE0,3)},
                         {4,multibyte_utf8(0xF8,0xF0,4)},

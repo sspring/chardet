@@ -15,6 +15,7 @@
                              GB18030_two_byte_func(0x81,0xFE,0x30,0x39)(s+2);}
 
 std::vector<std::pair<int,GB18030_func_type> > GB18030_detect = {
+        {1,[](const uchar* s){return  *s <= 0x7F;}}, // ascii
         {2,GB18030_two_byte_func(0xB0,0xF7,0xA1,0xFE)},
         {2,GB18030_two_byte_func(0x81,0xA0,0x40,0xFE)},
         {2,GB18030_two_byte_func(0xAA,0xFE,0x40,0xA0)},
