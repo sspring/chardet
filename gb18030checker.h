@@ -20,7 +20,7 @@ std::vector<std::pair<int,GB18030_func_type> > GB18030_detect = {
         {2,GB18030_two_byte_func(0x81,0xA0,0x40,0xFE)},
         {2,GB18030_two_byte_func(0xAA,0xFE,0x40,0xA0)},
         {4,GB18030_four_byte_func(0x81,0x82)},
-        {4,GB18030_four_byte_func(0x91,0x98)}};
+        {4,GB18030_four_byte_func(0x95,0x98)}};
 
 class GB18030Checker:public CharsetChecker
 {
@@ -42,7 +42,7 @@ public:
             int buffer_left_length = length-current_index-1;
             for(auto detect:GB18030_detect)
             {
-                if(detect.first >= buffer_left_length &&
+                if(detect.first <= buffer_left_length &&
                         detect.second(buffer))
                 {
                     current_index += detect.first;
