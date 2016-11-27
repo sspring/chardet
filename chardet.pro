@@ -15,7 +15,14 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    checker.cpp \
+    asciichecker.cpp \
+    big5checker.cpp \
+    gb18030checker.cpp \
+    gbkchecker.cpp \
+    shiftjischecker.cpp \
+    utf8checker.cpp
 
 HEADERS += \
     utf8checker.h \

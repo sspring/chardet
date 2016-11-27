@@ -3,30 +3,15 @@
 
 #include "checker.h"
 
-class AsciiChecker:public CharsetChecker
+class AsciiChecker:public CheckerBase
 {
 public:
-    AsciiChecker()
-        :CharsetChecker()
-    {
-        this->charset_name = "ascii";
-    }
-
-    bool detect(std::string str)const
-    {
-        for(uchar ch:str)
-        {
-            if(ch >> 7) // whether the first bit is 1
-            {
-                return false;
-            }
-        }
-        return true;
-    }
+    AsciiChecker();
+    bool detect(std::string str)const;
 };
 
 // global variable --- like singleton
-AsciiChecker _asciichecker = AsciiChecker();
+//AsciiChecker _asciichecker = AsciiChecker();
 
 #endif // ASCIICHECKER
 

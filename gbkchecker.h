@@ -3,50 +3,15 @@
 
 #include "checker.h"
 
-class GBKChecker:public CharsetChecker
+class GBKChecker:public CheckerBase
 {
 public:
-    GBKChecker()
-        :CharsetChecker()
-    {
-        this->charset_name = "gbk";
-    }
-
-    bool detect(std::string str) const
-    {
-        int current_index = -1;
-        int length = str.length();
-        const uchar* buffer = (const uchar*)str.c_str();
-        while(current_index+1 < length)
-        {
-            if(*buffer <= 0x7F) // ascii
-            {
-                current_index += 1;
-                buffer += 1;
-            }
-            if(check_two_byte(buffer))
-            {
-                current_index += 2;
-                buffer += 2;
-            }
-            else
-            {
-                break;   // error occured!
-            }
-        }
-        return (current_index+1==length);
-    }
+    GBKChecker();
+    bool detect(std::string str) const;
 private:
-    bool check_two_byte(const uchar* str)const
-    {
-        bool first_byte_valid = *str>=0x81 && *str<=0xFE;
-        ++ str;  // let check second byte
-        bool second_byte_valid = *str>=40 && *str<=0xFE && \
-                                *str!=0x7F;
-        return first_byte_valid&&second_byte_valid;
-    }
+    bool check_two_byte(const unsigned char* str)const;
 };
 
-GBKChecker _gbkchecker = GBKChecker();
+//GBKChecker _gbkchecker = GBKChecker();
 #endif // GBKCHECKER
 
