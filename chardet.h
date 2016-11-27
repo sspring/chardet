@@ -1,13 +1,7 @@
 #ifndef CHARDET
 #define CHARDET
 
-#include "asciichecker.h"
-#include "gbkchecker.h"
-#include "gb18030checker.h"
-#include "utf8checker.h"
-#include "big5checker.h"
-#include "shiftjischecker.h"
-#include <algorithm>
+#include "checker.h"
 
 map<string,string> charset_alians = {
         {"iso_ir 100","ascii"},  // DICOM charset
