@@ -7,11 +7,10 @@ class AsciiChecker:public CheckerBase
 {
 public:
     AsciiChecker();
-    bool detect(std::string str)const;
+    bool detect(string str)const;
 };
 
 // global variable --- like singleton
-//AsciiChecker _asciichecker = AsciiChecker();
 
 #endif // ASCIICHECKER
 

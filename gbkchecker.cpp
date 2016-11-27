@@ -39,3 +39,4 @@ bool GBKChecker::check_two_byte(const unsigned char *str) const
     return first_byte_valid&&second_byte_valid;
 }
 
+GBKChecker _gbkchecker = GBKChecker();

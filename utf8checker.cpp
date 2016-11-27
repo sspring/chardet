@@ -17,7 +17,7 @@ bool bytes_extra_check(const unsigned char* str,int length)  // check every byte
                                 {return (((*s)&a)==b && len>=num && \
                                          bytes_extra_check(s+1,num-1));}
 
-std::map<int,std::function<bool(const unsigned char*,int)> >utf8_detect_function={ \
+map<int,function<bool(const unsigned char*,int)> >utf8_detect_function={ \
                         {1,multibyte_utf8(0x80,0x00,1)}, // ascii
                         {2,multibyte_utf8(0xE0,0xC0,2)},
                         {3,multibyte_utf8(0xF0,0xE0,3)},
@@ -54,3 +54,5 @@ bool UTF8Checker::detect(string str) const
     }
     return (current_index+1==length);
 }
+
+UTF8Checker _utf8checker = UTF8Checker();

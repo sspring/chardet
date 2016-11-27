@@ -7,9 +7,8 @@ class ShiftJISChecker:public CheckerBase
 {
 public:
     ShiftJISChecker();
-    bool detect(std::string str) const;
+    bool detect(string str) const;
 };
 
-//ShiftJISChecker _shiftjischecker = ShiftJISChecker();
 #endif // SHIFTJISCHECKER
 

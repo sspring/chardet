@@ -3,6 +3,7 @@
 AsciiChecker::AsciiChecker()
     :CheckerBase("ascii")
 {
+
 }
 
 bool AsciiChecker::detect(string str) const
@@ -17,3 +18,4 @@ bool AsciiChecker::detect(string str) const
     return true;
 }
 
+AsciiChecker _asciichecker = AsciiChecker();

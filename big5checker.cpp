@@ -3,7 +3,7 @@
 #define Big5_two_byte_func(min,max) \
     [](const unsigned char* s){unsigned short value=(*s<<8)+s[1];return value>=min && value<= max;}
 
-std::vector<std::function<bool(const unsigned char*)>> Big5_two_byte_detect = {
+vector<function<bool(const unsigned char*)>> Big5_two_byte_detect = {
         Big5_two_byte_func(0xa140,0xa3bf),
         Big5_two_byte_func(0xa440,0xc67e),
         Big5_two_byte_func(0xc940,0xf9d5)};
@@ -49,3 +49,5 @@ bool Big5Checker::check_two_bytes(const unsigned char *buffer) const
     }
     return false;
 }
+
+Big5Checker _big5checker = Big5Checker();

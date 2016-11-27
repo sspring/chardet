@@ -1,7 +1,7 @@
 #include "gb18030checker.h"
 
 
-#define GB18030_func_type std::function<bool(const unsigned char*)>
+#define GB18030_func_type function<bool(const unsigned char*)>
 
 #define GB18030_two_byte_func(a,b,c,d) \
     [](const unsigned char* s){return *s>=a && *s<=b && s[1]>=c && s[1]<=d;}
@@ -10,7 +10,7 @@
     [](const unsigned char* s){return GB18030_two_byte_func(0x81,0x82,0x30,0x39)(s) && \
                              GB18030_two_byte_func(0x81,0xFE,0x30,0x39)(s+2);}
 
-const std::vector<std::pair<int,GB18030_func_type> > GB18030_detect = {
+const vector<pair<int,GB18030_func_type> > GB18030_detect = {
         {1,[](const unsigned char* s){return  *s <= 0x7F;}}, // ascii
         {2,GB18030_two_byte_func(0xB0,0xF7,0xA1,0xFE)},
         {2,GB18030_two_byte_func(0x81,0xA0,0x40,0xFE)},
@@ -50,3 +50,4 @@ bool GB18030Checker::detect(string str) const
     return (current_index+1 == length);
 }
 
+GB18030Checker _gb18030checker = GB18030Checker();

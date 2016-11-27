@@ -9,10 +9,8 @@ class GB18030Checker:public CheckerBase
 {
 public:
     GB18030Checker();
-    bool detect(std::string str) const;
+    bool detect(string str) const;
 };
-
-//GB18030Checker _gb18030checker = GB18030Checker();
 
 #endif // GB18030CHECKER
 

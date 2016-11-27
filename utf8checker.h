@@ -7,10 +7,8 @@ class UTF8Checker:public CheckerBase
 {
 public:
     UTF8Checker();
-    bool detect(std::string str) const;
+    bool detect(string str) const;
 };
-
-//UTF8Checker _utf8checker = UTF8Checker();
 
 #endif // UTF8CHECKER
 

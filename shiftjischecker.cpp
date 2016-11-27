@@ -1,14 +1,14 @@
 #include "shiftjischecker.h"
 
 
-#define ShiftJIS_func_type std::function<bool(const unsigned char*)>
+#define ShiftJIS_func_type function<bool(const unsigned char*)>
 #define ShiftJIS_one_byte_func(a,b) \
     [](const unsigned char* s){return *s>=a && *s<=b;}
 
 #define ShiftJIS_two_byte_func(a,b,c,d) \
     [](const unsigned char* s){return *s>=a && *s<=b && s[1]>=c && s[1]<=d;}
 
-std::vector<std::pair<int,ShiftJIS_func_type> > ShiftJIS_detect = {
+vector<pair<int,ShiftJIS_func_type> > ShiftJIS_detect = {
         {2,ShiftJIS_two_byte_func(0x40,0x7E,0x80,0xFC)},  // make this before than 0x00,0x7F
         {2,ShiftJIS_two_byte_func(0x81,0x9F,0xE0,0xEF)},
         {1,ShiftJIS_one_byte_func(0x00,0x7F)},
@@ -45,3 +45,4 @@ bool ShiftJISChecker::detect(string str) const
     return (current_index+1 == length);
 }
 
+ShiftJISChecker _shiftjischecker = ShiftJISChecker();
