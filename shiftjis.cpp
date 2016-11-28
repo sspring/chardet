@@ -1,4 +1,4 @@
-#include "shiftjischecker.h"
+#include "shiftjis.h"
 
 
 #define ShiftJIS_func_type function<bool(const unsigned char*)>

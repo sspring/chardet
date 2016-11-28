@@ -1,4 +1,4 @@
-#include "gb18030checker.h"
+#include "gb18030.h"
 
 
 #define GB18030_func_type function<bool(const unsigned char*)>

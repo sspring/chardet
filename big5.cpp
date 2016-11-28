@@ -1,4 +1,4 @@
-#include "big5checker.h"
+#include "big5.h"
 
 #define Big5_two_byte_func(min,max) \
     [](const unsigned char* s){unsigned short value=(*s<<8)+s[1];return value>=min && value<= max;}

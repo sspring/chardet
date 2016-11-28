@@ -1,4 +1,4 @@
-#include "gbkchecker.h"
+#include "gbk.h"
 
 GBKChecker::GBKChecker()
     :CheckerBase("gbk")

@@ -11,6 +11,8 @@
 #include <functional>
 using namespace std;
 
+typedef unsigned char uchar;
+
 class CheckerBase
 {
 public:

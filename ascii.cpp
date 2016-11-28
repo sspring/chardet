@@ -1,4 +1,4 @@
-#include "asciichecker.h"
+#include "ascii.h"
 
 AsciiChecker::AsciiChecker()
     :CheckerBase("ascii")

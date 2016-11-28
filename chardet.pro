@@ -17,19 +17,21 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     checker.cpp \
-    asciichecker.cpp \
-    big5checker.cpp \
-    gb18030checker.cpp \
-    gbkchecker.cpp \
-    shiftjischecker.cpp \
-    utf8checker.cpp
+    ascii.cpp \
+    big5.cpp \
+    gb18030.cpp \
+    gbk.cpp \
+    shiftjis.cpp \
+    utf8.cpp \
+    iso2022_jp.cpp
 
 HEADERS += \
-    utf8checker.h \
-    gb18030checker.h \
-    gbkchecker.h \
-    asciichecker.h \
     chardet.h \
     checker.h \
-    big5checker.h \
-    shiftjischecker.h
+    iso2022_jp.h \
+    ascii.h \
+    big5.h \
+    gb18030.h \
+    gbk.h \
+    shiftjis.h \
+    utf8.h

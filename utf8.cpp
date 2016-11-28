@@ -1,4 +1,4 @@
-#include "utf8checker.h"
+#include "utf8.h"
 
 bool bytes_extra_check(const unsigned char* str,int length)  // check every byte in str
 {
