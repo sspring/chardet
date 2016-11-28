@@ -13,7 +13,7 @@ public:
     ISO2022_JPChecker();
     bool detect(string str) const;
 private:
-    tuple<bool,iso2022_jp_pair> check_flag(char* str);
+    tuple<bool,iso2022_jp_pair> check_flag(const char* &str)const;
 };
 
 #endif // ISO2022_JP_H
